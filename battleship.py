@@ -1,5 +1,4 @@
 import time
-RED = '\033[31mX'
 def delayed_type(word, delay):
         """
         Prints word letter by letter
@@ -300,10 +299,6 @@ class Player:
             and other_ship.ship_status[i] != 'OFFLINE!':
                 self.sinks += 1
                 other_ship.ship_status[i] = 'OFFLINE!'
-                if ship_horizontal:
-                    other_ship.board[ship[0]][ship[1][0]:ship[1][1]] = [f"{RED}X" for i in range(len(self.fleet[i]))]
-                if ship_horizontal:
-                    [other_ship.board[ship[0][0]+i][ship[1]] for i in range(len(self.fleet[i]))] = [f"{RED}" for i in range(len(self.fleet[i]))]
                 delayed_type(f"YOU SUNK {i}!!", .01)
     def reveal_boards(self):
         """
